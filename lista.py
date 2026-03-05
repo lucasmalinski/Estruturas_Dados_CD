@@ -30,6 +30,7 @@ carros.extend(["Escort", "Chevette"]) # Adiciona uma nova lista no fim
 print(carros)
 '''
 
+'''
 # Remover elementos
 tarefas = [
     "Comprar",
@@ -59,3 +60,26 @@ print(tarefas)
 
 tarefas.clear()
 print(tarefas)
+'''
+
+# Ordenação
+armas = ["Machado", "Espada Larga", "Nunchaku", "Katana", "Alabarda"]
+print(armas)
+
+armas.sort()                # Ordenar em ordem alfabética
+print(armas)
+
+armas.reverse()             # Inverte a ordem da lista
+print(armas)
+
+armas.sort(reverse=True)    # Ordena de forma invertida
+print(armas)
+
+numeros = [56, 24,1000, 78, 0, -2]
+print(numeros)
+numeros.sort()
+#numeros.sort(reverse = True)
+
+print(numeros)
+numeros.reverse()
+print(numeros)
