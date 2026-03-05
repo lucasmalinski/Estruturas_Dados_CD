@@ -22,18 +22,28 @@ nums = (5,6,25,456,32.4,-8,5)
 # print(nums_invertido)
 # print(nums)
 
-cliente_1 = ("Marcos", 54, "SP", "4623897", False)
-print("Nome:",cliente_1[0])
-print("Idade:",cliente_1[1])
-print("Estado:",cliente_1[2])
-print("RG:",cliente_1[3])
-print("Ativo:",cliente_1[4])
+# cliente_1 = ("Marcos", 54, "SP", "4623897", False)
+# print("Nome:",cliente_1[0])
+# print("Idade:",cliente_1[1])
+# print("Estado:",cliente_1[2])
+# print("RG:",cliente_1[3])
+# print("Ativo:",cliente_1[4])
 
-cliente_2 = ("Yasmin", 34, "DF", "3258746", True)
-cliente_3 = ("Luan", 27, "RJ", "1248965", True)
+# cliente_2 = ("Yasmin", 34, "DF", "3258746", True)
+# cliente_3 = ("Luan", 27, "RJ", "1248965", True)
 
-cadastro = []
-cadastro.append(cliente_1)
-cadastro.append(cliente_2)
-cadastro.append(cliente_3)
-print(cadastro)
+# cadastro = []
+# cadastro.append(cliente_1)
+# cadastro.append(cliente_2)
+# cadastro.append(cliente_3)
+# print(cadastro)
+
+# Exemplo de função com mais de um retorno em forma de tupla
+def calcular_geometria(lado):
+    area = lado ** 2
+    perimetro = lado * 4
+    return area, perimetro #Tupla (area,perimetro)
+
+resultado_area, resultado_perimetro = calcular_geometria(5)
+print(resultado_area)
+print(resultado_perimetro)
