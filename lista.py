@@ -19,6 +19,15 @@ print(invertida)
 '''
 
 '''
+# Modificando elementos
+notas = [8.2, 2.3, 5.6, 7.9, 4.8]
+notas[1] = 4
+notas[3:5] = [8, 5]
+
+print(notas)
+'''
+
+'''
 # Adicinar elementos
 carros =["Fusca", "Santana", "Opala"]
 print(carros)
@@ -62,6 +71,7 @@ tarefas.clear()
 print(tarefas)
 '''
 
+'''
 # Ordenação
 armas = ["Machado", "Espada Larga", "Nunchaku", "Katana", "Alabarda"]
 print(armas)
@@ -83,3 +93,67 @@ numeros.sort()
 print(numeros)
 numeros.reverse()
 print(numeros)
+'''
+
+'''
+# Busca e contagem
+cores = ["Vermelho", "Azul", "Verde", "Azul", "Amarelo", "Verde"]
+
+tem_amarelo = "Amarelo" in cores    # Boolean, Verifica se existe na lista
+tem_roxo = "Roxo" in cores
+print(tem_amarelo)
+print(tem_roxo)
+
+# Quantos elementos daquele existem na lista
+print(cores.count("Azul"))
+print(cores.count("Roxo"))
+
+# Encontrar índice
+print(cores.index("Verde"))
+
+# Laço de repetição para printar
+for c in cores:
+    print("Cor:",c)
+'''
+
+'''
+# Listas como Pilhas(Stack) - LIFO (Last In, First Out)
+historico = []
+
+# Inserindo na pilha
+historico.append("google.com")
+historico.append("tiktok.com")
+historico.append("github.com")
+
+# Pegando o ultimo elemento da pilha(stack)
+ultima_pagina = historico.pop() 
+print(ultima_pagina)
+'''
+
+'''
+# Matriz 2D
+jogo_da_velha = [
+    ["X","O", "X"],
+    [" ","X", "O"],
+    ["O"," ", "X"]
+]
+print(jogo_da_velha[1][1])
+jogo_da_velha[2][1] = "X"
+jogo_da_velha[2][2] = " "
+
+for l in jogo_da_velha:
+    print(l)
+'''
+
+# Cópia de listas
+nums = [1,2,3]
+# Copia o endereço de memória, não copia a lista (são dependentes)
+nums_2 = nums
+# Cria uma cópia independente da original
+nums_3 = nums.copy()
+
+nums[2] = 4
+
+print(nums)
+print(nums_2)
+print(nums_3)
