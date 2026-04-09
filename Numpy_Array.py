@@ -51,6 +51,7 @@ sub_matriz = dados[0:2,1:3]  # linhas 0 e 1, colunas 1 e 2l matriz quadrada
 print(sub_matriz)
 '''
 
+'''
 # 3. Operações Vetorizadas - Não utilizam FOR e são mais rápidas
 
 precos = np.array([100.0, 200.50, 299.99])
@@ -82,3 +83,20 @@ print(quartil_precos)
 
 desvio_padrao_precos = np.std(precos)   # Função de desvio padrão
 print(desvio_padrao_precos)
+'''
+
+# Indexação Booleana (Filtros Vetorizados)
+idades = np.array([18,25,32,45,19,50])
+
+# Condição Lógica, gera array de booleans
+filtro_maiores_30 = idades > 30 
+print(filtro_maiores_30)
+
+# Aplicando o filtro na array original
+filtrados = idades[filtro_maiores_30]
+print(filtrados)
+
+#Forma resumida 
+# & = and  , | = or
+idades_validas = idades[(idades >= 18) & (idades < 40)]
+print(idades_validas)
