@@ -92,11 +92,12 @@ idades = np.array([18,25,32,45,19,50])
 filtro_maiores_30 = idades > 30 
 print(filtro_maiores_30)
 
-# Aplicando o filtro na array original
+# Aplicando o filtro no array original
 filtrados = idades[filtro_maiores_30]
 print(filtrados)
 
-#Forma resumida 
-# & = and  , | = or
+#Forma resumida (Numpy utiliza & e |)
+# & = and
+# | = or
 idades_validas = idades[(idades >= 18) & (idades < 40)]
 print(idades_validas)
