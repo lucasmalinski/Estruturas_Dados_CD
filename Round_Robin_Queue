@@ -1,0 +1,50 @@
+''' O Round Robin é um algoritmo clássico de sistemas operacionais
+para compartilhar o tempo da CPU entre vários processos.
+Cada processo recebe um "Quantum" (fatia de tempo limite).
+Se o processo não terminar nesse tempo, ele é pausado e mandado
+para o final da fila, dando vez ao próximo.
+'''
+
+from collections import deque
+import time
+
+# Simulador com uma fila de processos e um quantum definido
+def simulador_round_robin(processos,quantum):
+    """
+    Simula o escalonamento Round Robin usando uma Fila(deque)
+    processos:lista de listas no formato 
+    ["Nome do Processo", Tempo total necessário]
+    """
+    fila_processos = deque(processos)
+    tempo_atual = 0
+
+    print(f"--- Iniciando Round Robin (Quantum:{quantum}s) ---")
+
+    while fila_processos:
+        processo_atual = fila_processos.popleft()
+        nome,tempo_restante = processo_atual[0], processo_atual[1]
+
+        print(f"[{tempo_atual}s] Executando {nome}(Restante: {tempo_restante}s)")
+
+        if tempo_restante <= quantum:
+            tempo_gasto = tempo_restante
+            tempo_atual += tempo_gasto
+            print(f"->{nome} foi concluído em {tempo_atual}s.\n")
+            time.sleep(1)
+        else:
+            tempo_atual += quantum
+            tempo_restante -= quantum
+            print(f"-> {nome} não terminou. Pausado. Volta para o fim da fila.\n")
+            fila_processos.append([nome,tempo_restante])
+            time.sleep(1)
+
+    print(f"--- Simulação Encerrada aos {tempo_atual}s ---")
+
+lista_processos = [
+    ["Processo A (Google Chrome)", 7],
+    ["Processo B (Spotify)",2],
+    ["Processo C (Word)",8],
+    ["Processo D (Copilot)",12]
+]
+
+simulador_round_robin(lista_processos, quantum = 3)
